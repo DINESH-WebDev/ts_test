@@ -1,8 +1,9 @@
-import { Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { Page1Component } from './page1/page1.component';
 import { Page2Component } from './page2/page2.component';
 import { Page3Component } from './page3/page3.component';
-Page3Component
+import { NgModule } from '@angular/core';
+
 export const routes: Routes = [
 
     {path:'',component:Page1Component},
@@ -11,3 +12,10 @@ export const routes: Routes = [
     {path:'page3',component:Page3Component},
    
 ];
+
+@NgModule({
+    imports: [RouterModule.forRoot(routes ,{ useHash: true })],
+    exports: [RouterModule]
+  })
+
+export class AppRoutingModule { }
